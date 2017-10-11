@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{% if products %}
+  {% for product in products %}
+    <table class="table table-hover">
+      <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.detail }}</td>
+        {% if product.image %}
+          <td><a href="/detail/{{ product.id }}"><img src="/static/images/{{ product.image }}" width="128" height="128" alt="flowerflower" title="flowerflower"></a> </td>
+        {% else %}
+          <td><a href="/detail/{{ product.id }}"><img src="/static/images/no_image.jpg" width="128" height="128" alt="no_image" title="flowerflower"></a></td>
+        {% endif %}
+      </tr>
+    </table>
+  {% endfor %}
+{% endif %}
+
+{% endblock %}

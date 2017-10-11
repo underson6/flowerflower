@@ -7,4 +7,4 @@ class Product:
         self.name = u"おはな"
         self.price = 200
         self.detail = u"これはおはなです"
-        self.imagepath = "/static/images/no_images.jpg"
+        self.image = "/static/images/no_images.jpg"

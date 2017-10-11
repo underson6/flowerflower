@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    {% if session.get("product") %}
+        <h1>session["product"]とれたよ</h1>
+        {{ session.get("product") }}
+    {% else %}
+        <h1>とれてないよ</h1>
+    {% endif %}
+
+{% endblock %}

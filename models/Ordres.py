@@ -8,3 +8,5 @@ class Orders:
         self.customerId = ""
         self.amount = ""
         self.orderDate = ""
+        self.cancel = 0
+        self.delivery = 0

@@ -33,7 +33,84 @@ class ProductDao:
                 product.name = result["name"]
                 product.price = result["price"]
                 product.detail = result["detail"]
-                product.imagepath = result["imagepath"]
+                product.image = result["image"]
+                products.append(product)
+
+        except MySQLdb.Error as e:
+            pass
+        finally:
+            try:
+                if cursor is not None:
+                    cursor.close()
+                    cursor = None
+                # if con is not None:
+                #     con.close()
+                #     con = None
+            except MySQLdb.Error as e:
+                pass
+
+        return products
+
+
+    def getProductDetail(self, productId):
+        u""" productテーブルから指定されたIDの情報を全て取得する """
+
+        con = None
+        cursor = None
+        product = None
+        try:
+            sql = "SELECT * FROM product WHERE id = %(id)s"
+            daoUtil = DaoUtil()
+            con = daoUtil.getConnection()
+            cursor = con.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute(sql, {"id":productId})
+            results = cursor.fetchall()
+
+            for result in results:
+                product = Product()
+                product.id = result["id"]
+                product.name = result["name"]
+                product.price = result["price"]
+                product.detail = result["detail"]
+                product.image = result["image"]
+
+        except MySQLdb.Error as e:
+            pass
+        finally:
+            try:
+                if cursor is not None:
+                    cursor.close()
+                    cursor = None
+                # if con is not None:
+                #     con.close()
+                #     con = None
+            except MySQLdb.Error as e:
+                pass
+
+        return product
+
+
+    def getRecommendProduct(self):
+        u""" productテーブルから指定されたIDの情報を全て取得する """
+
+        con = None
+        cursor = None
+        products = []
+        try:
+            sql = "SELECT * FROM product WHERE recommend = 1"
+            daoUtil = DaoUtil()
+            con = daoUtil.getConnection()
+            cursor = con.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute(sql)
+            results = cursor.fetchall()
+
+            for result in results:
+                product = Product()
+                product.id = result["id"]
+                product.name = result["name"]
+                product.price = result["price"]
+                product.detail = result["detail"]
+                product.image = result["image"]
                 products.append(product)
 
         except MySQLdb.Error as e:

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<button value="back" name="back" onclick="history.back();">back</button>
+{% if product %}
+    <table class="table table-hover">
+      <tr>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.detail }}</td>
+        {% if product.image %}
+          <td><img src="/static/images/{{ product.image }}" width="128" height="128" alt="flowerflower" title="flowerflower"> </td>
+        {% else %}
+          <td><img src="/static/images/no_image.jpg" width="128" height="128" alt="no_image" title="flowerflower"> </td>
+        {% endif %}
+      </tr>
+    </table>
+    <form action="/cart" method="post">
+      <input type="hidden" name="productId" value="{{ product.id }}">
+      <input type="submit" value="カートに入れる" name="submit">
+    </form>
+{% else %}
+
+{% endif %}
+
+{% endblock %}

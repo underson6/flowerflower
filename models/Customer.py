@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class Customer:
-    """ 注文情報のモデル """
+    """ 顧客情報のモデル """
 
     def __init__(self):
         self.id = 0
