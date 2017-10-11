@@ -1,0 +1,51 @@
+商品テーブル (product)
+　商品id(auto increment),商品名、価格、説明、レコメンドフラグ、受注開始日、受注終了日、画像ファイルパス
+顧客テーブル (customer)
+　顧客id(auto increment),氏名、郵便番号、住所、メールアドレス、会員フラグ
+注文テーブル (orders)
+　注文id(auto increment),顧客ID,金額,注文日時、キャンセルフラグ、発送済みフラグ　
+注文詳細テーブル (orders_detail)
+  注文id、商品ID,個数,合計金額
+カートテーブル (cart)
+  セッションID,商品ID,個数,更新時間
+
+DROP TABLE IF EXISTS product;
+create table product (
+id int AUTO_INCREMENT,
+name text not null,
+detail text,
+recommend boolean,
+order_start datetime,
+order_end datetime,
+price int,
+image text,
+primary key (id));
+
+insert into product (name, detail, price, recommend,image) values ("hoge", "hogehoge", 2000, 0, null);
+insert into product (name, detail, price, recommend,image) values ("fuga", "fugafuga", 2000, 0, null);
+insert into product (name, detail, price, recommend,image) values ("バラの花束", "結婚祝い用のバラの花束です", 2000, 1, null);
+insert into product (name, detail, price, recommend,image) values ("gaba", "gabagaba", 2000, 0, null);
+insert into product (name, detail, price, recommend,image) values ("daba", "dabadaba", 2000, 0, null);
+insert into product (name, detail, price, recommend,image) values ("バラの花束かも", "たぶんバラの花束です", 2000, 1, "rose.jpg");
+
+create table customer(
+id int AUTO_INCREMENT, 
+name text not null, 
+address text not null, 
+email text not null, 
+member int(1),
+primary key (id));
+
+create table orders (
+id int AUTO_INCREMENT,
+customer_id int,
+amout int,
+order_date datetime
+);
+
+create table order_detail (
+ id int,
+ order_id int,
+ product_it int,
+ number int
+); 
