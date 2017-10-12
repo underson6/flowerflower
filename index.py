@@ -101,10 +101,19 @@ def cartAdd():
         # error page
 
     isSuccess = False
-    # productIdがあればカートに入れる
-    if productId != 0:
-        cartDao = CartDao()
+    isExist = False
+
+    cartDao = CartDao()
+    isExist = cartDao.isExistProduct(session.get("sessionid"), productId)
+
+    if isExist and productId > 0:
+        print("update")
+        isSuccess = cartDao.updateCart(session.get("sessionid"), productId, count)
+    elif isExist is False and productId > 0:
+        print("insert")
         isSuccess = cartDao.addCart(session.get("sessionid"), productId, count)
+
+
 
     message = ""
     if isSuccess:

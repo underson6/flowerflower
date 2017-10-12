@@ -84,7 +84,7 @@ class CartDao:
         cursor = None
         isSuccess = False
         try:
-            sql = "UPDATE cart SET count = %s WHERE sessoin_id = %s AND product_id = %s"
+            sql = "UPDATE cart SET count = %s WHERE session_id = %s AND product_id = %s"
             daoUtil = DaoUtil()
             con = daoUtil.getConnection()
             cursor = con.cursor()
@@ -130,6 +130,35 @@ class CartDao:
                 print(e)
 
         return isSuccess
+
+
+    def isExistProduct(self, sessionId, productId):
+        u""" 既にカートに同じ商品が登録されているかを取得する """
+        con = None
+        cursor = None
+        isExist = False
+        try:
+            sql = "SELECT * FROM cart WHERE session_id = %(sessionId)s AND product_id = %(productId)s"
+            daoUtil = DaoUtil()
+            con = daoUtil.getConnection()
+            cursor = con.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute(sql,{"sessionId":sessionId, "productId": productId})
+            results = cursor.fetchall()
+
+            if len(results) > 0:
+                isExist = True
+
+        except MySQLdb.Error as e:
+            print(e)
+        finally:
+            try:
+                if cursor is not None:
+                    cursor.close()
+                    cursor = None
+            except MySQLdb.Error as e:
+                print(e)
+
+        return isExist
 
 
 
