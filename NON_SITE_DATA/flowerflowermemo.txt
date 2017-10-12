@@ -9,6 +9,13 @@
 カートテーブル (cart)
   セッションID,商品ID,個数,更新時間
 
+DROP TABLE IF EXISTS cart;
+CREATE TABLE cart (
+session_id text,
+product_id int,
+count int,
+update_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);
+
 DROP TABLE IF EXISTS product;
 create table product (
 id int AUTO_INCREMENT,
