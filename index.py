@@ -88,14 +88,12 @@ def cartAdd():
     count = 0
 
     try:
-        if (request.form["productId"] is not None and request.form["productId"] != "")\
-                and request.form["productId"] > 0:
-            productId = request.form["productId"]
+        if request.form["productId"] is not None and request.form["productId"] != "":
+            productId = int(request.form["productId"])
         else:
             pass
-        if (request.form["count"] is not None and request.form["count"] != "")\
-                and request.form["count"] > 0:
-            count = request.form["count"]
+        if request.form["count"] is not None and request.form["count"] != "":
+            count = int(request.form["count"])
         else:
             pass
     except TypeError as e:

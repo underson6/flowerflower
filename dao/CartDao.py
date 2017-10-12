@@ -27,9 +27,7 @@ class CartDao:
             daoUtil = DaoUtil()
             con = daoUtil.getConnection()
             cursor = con.cursor(MySQLdb.cursors.DictCursor)
-            print("pre execute")
             cursor.execute(sql,{"id":sessionId})
-            print("post execute")
             results = cursor.fetchall()
 
             for result in results:
