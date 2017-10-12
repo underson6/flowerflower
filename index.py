@@ -156,7 +156,11 @@ def cart():
     cartDao = CartDao()
     cartItems = cartDao.getCart(session.get("sessionid"))
 
-    return render_template("cart.html", title=title, cartItems=cartItems)
+    amount = 0
+    for cartItem in cartItems:
+        amount += cartItem.amount
+
+    return render_template("cart.html", title=title, cartItems=cartItems, amount=amount)
 
 
 @app.route("/orderInput")
