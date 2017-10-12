@@ -7,6 +7,7 @@ from models.Customer import Customer
 
 from dao.ProductDao import ProductDao
 from dao.CustomerDao import CustomerDao
+from dao.CartDao import CartDao
 
 import json, random, os, hashlib
 
@@ -16,17 +17,17 @@ app.config["SECRET_KEY"] = "this is a secret key"
 
 @app.before_request
 def before_request():
-    if session is None:
-        print("not have session")
-    if session.get("username") is not None:
-        print("logged in")
-    if request.path == "/login":
-        print("you want to go to login page")
-        session["username"] = "ohana"
-        # return render_template("index.html")
-        return redirect(url_for("hello"))
-        pass
-    print("redirect")
+    print(session)
+    if session.get('sessionid') is None:
+        print("set session id")
+        m = hashlib.sha256()
+        m.update(os.urandom(64))
+        randomStr = m.hexdigest()
+        session["sessionid"] = randomStr
+    else:
+        print("session exist")
+
+    print("##### " + session.get("sessionid") + " #####")
 
 
 @app.route("/")
@@ -38,9 +39,6 @@ def hello():
     products = productDao.getAllProduct()
     sample = random.sample(products, 3)
     message = "hogehogeee"
-    m = hashlib.sha256()
-    m.update(os.urandom(64))
-    print(m.hexdigest())
     return render_template("index.html", title=title, message=message, products=sample)
     # return "Hello Flask!"
 
@@ -80,38 +78,78 @@ def recommend():
     pass
 
 
-@app.route("/cart", methods=["GET", "POST"])
-def cart():
+@app.route("/cart/add", methods=["POST"])
+def cartAdd():
     """カート画面を表示"""
 
-    title = "カート画面"
+    title = u"カート画面"
 
-    """sessionに商品を入れる"""
-    if session.get("products") is None:
-        print("session products is None")
+    productId = 0
+    count = 0
+
+    try:
+        if (request.form["productId"] is not None and request.form["productId"] != "")\
+                and request.form["productId"] > 0:
+            productId = request.form["productId"]
+        else:
+            pass
+        if (request.form["count"] is not None and request.form["count"] != "")\
+                and request.form["count"] > 0:
+            count = request.form["count"]
+        else:
+            pass
+    except TypeError as e:
+        print(e)
+        # error page
+
+    isSuccess = False
+    # productIdがあればカートに入れる
+    if productId != 0:
+        cartDao = CartDao()
+        isSuccess = cartDao.addCart(session.get("sessionid"), productId, count)
+
+    message = ""
+    if isSuccess:
+        message = u"商品をカートに追加しました"
     else:
-        print("session products is not None")
+        message = u"カート追加に失敗しました。管理者にお問い合わせください。"
+
+    """
+    idがあればカートに入れる
+    message=商品を追加しました的なメッセージ
+    
+    カートの全ての商品を表示する
+    """
 
     # 空文字列チェック
-    if request.form["productId"] is None or request.form["productId"] == "":
-    # if None in [request.form("productId")]:
-        # todo: エラーページに飛ばす
-        pass
-    if isinstance(request.form["productId"], int) == False:
-        # todo: エラーページに飛ばす
-        pass
+    # if request.form["productId"] is None or request.form["productId"] == "":
+    # # if None in [request.form("productId")]:
+    #     pass
+    # if isinstance(request.form["productId"], int) == False:
+    #     pass
 
-    productId = request.form["productId"]
-    print("#############"+productId)
-    productDao = ProductDao()
-    products = productDao.getProductDetail(productId)
-    session["product"] = json.dumps(products.__dict__)
-    product = json.loads(session["product"])
-    for i in product:
-        print(isinstance(i, int))
-    print("######################")
+    # productId = request.form["productId"]
+    # print("#############"+productId)
+    # productDao = ProductDao()
+    # products = productDao.getProductDetail(productId)
+    # session["product"] = json.dumps(products.__dict__)
+    # product = json.loads(session["product"])
+    # for i in product:
+    #     print(isinstance(i, int))
+    # print("######################")
 
-    return render_template("cart.html", title=title)
+    return redirect(url_for("cart"))
+
+
+@app.route("/cart")
+def cart():
+    """カート画面"""
+    title = u"カート画面"
+
+    cartDao = CartDao()
+    cartItems = cartDao.getCart(session.get("sessionid"))
+
+    return render_template("cart.html", title=title, cartItems=cartItems)
 
 
 @app.route("/orderInput")
@@ -146,5 +184,5 @@ def not_found(error):
 
 
 if __name__ == "__main__":
-    app.debug = False
+    app.debug = True
     app.run(host="0.0.0.0")

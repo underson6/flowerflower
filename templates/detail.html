@@ -15,8 +15,9 @@
         {% endif %}
       </tr>
     </table>
-    <form action="/cart" method="post">
-      <input type="hidden" name="productId" value="{{ product.id }}">
+    <form action="/cart/add" method="post">
+      <input type="hidden" name="productId" value="{{ product.id }}"/>
+        <input type="number" name="count" value="1"/>
       <input type="submit" value="カートに入れる" name="submit">
     </form>
 {% else %}

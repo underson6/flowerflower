@@ -1,11 +1,19 @@
 {% extends "layout.html" %}
 {% block content %}
 
-    {% if session.get("product") %}
-        <h1>session["product"]とれたよ</h1>
-        {{ session.get("product") }}
+    {% if session.sessionid %}
+        <h1>session["sessionid"]とれたよ</h1>
+        {{ session.sessionid }}
     {% else %}
         <h1>とれてないよ</h1>
     {% endif %}
+
+    <table>
+        {% if cartItems %}
+            {% for cartItem in cartItems %}
+                <tr><td>{{ cartItem.productId }}</td><td>{{ cartItem.count }}</td><td>{{ cartItem.price }}</td><td>{{ cartItem.amount }}</td></tr>
+            {% endfor %}
+        {% endif %}
+    </table>
 
 {% endblock %}
