@@ -166,19 +166,22 @@ def cart():
 @app.route("/customerInfo")
 def orderInput():
     """注文情報入力画面を表示"""
-    pass
+    title = u"注文情報入力画面"
+    return render_template("inputCustomerInfo.html", title=title)
 
 
 @app.route("/customerInfoConfirm")
 def orderConfirm():
     """注文情報確認画面を表示"""
-    pass
+    title = u"注文確認画面"
+    return render_template("inputCustomerConfirm.html", title=title)
 
 
 @app.route("/orderComplete")
 def orderComplete():
     """注文完了画面を表示"""
-    pass
+    title = u"注文完了"
+    return render_template("orderComplete.html", title=title)
 
 
 @app.route("/about")
