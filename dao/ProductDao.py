@@ -129,8 +129,31 @@ class ProductDao:
         return products
 
 
-    def addProduct(self, product):
+    def addProduct(self, product, recommend):
         """ 引数に指定したproductを登録する """
+        con = None
+        cursor = None
+        isSuccess = False
+        try:
+            sql = "INSERT INTO product (name, detail, price, recommend, image) VALUES (%s, %s, %s, %s, %s);"
+            daoUtil = DaoUtil()
+            con = daoUtil.getConnection()
+            cursor = con.cursor()
+            cursor.execute("SET CHARACTER SET utf8")
+            cursor.execute(sql, (product.name, product.detail, int(product.price), int(recommend), product.image))
+            con.commit()
+            isSuccess = True
+        except MySQLdb.Error as e:
+            print(e)
+        finally:
+            try:
+                if cursor is not None:
+                    cursor.close()
+                    cursor = None
+            except MySQLdb.Error as e:
+                print(e)
+
+        return isSuccess
 
 
     def updateProduct(self, id, product):
@@ -149,3 +172,11 @@ if __name__ == "__main__":
         print(product.id)
         print(product.name)
         print(product.detail)
+
+
+    product = Product()
+    product.name = "hogeeee"
+    product.price = 50000
+    product.detail = "hogehogehogehoge"
+    product.image = ""
+    productDao.addProduct(product, 1)
