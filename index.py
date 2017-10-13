@@ -163,13 +163,13 @@ def cart():
     return render_template("cart.html", title=title, cartItems=cartItems, amount=amount)
 
 
-@app.route("/orderInput")
+@app.route("/customerInfo")
 def orderInput():
     """注文情報入力画面を表示"""
     pass
 
 
-@app.route("/orderConfirm")
+@app.route("/customerInfoConfirm")
 def orderConfirm():
     """注文情報確認画面を表示"""
     pass
@@ -191,6 +191,8 @@ def about():
 @app.errorhandler(404)
 def not_found(error):
     """404ページ"""
+    title = u"page not found"
+    return render_template("404.html", title=title)
     pass
 
 
