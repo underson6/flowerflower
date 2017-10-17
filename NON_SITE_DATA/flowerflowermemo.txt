@@ -1,7 +1,7 @@
 商品テーブル (product)
 　商品id(auto increment),商品名、価格、説明、レコメンドフラグ、受注開始日、受注終了日、画像ファイルパス
 顧客テーブル (customer)
-　顧客id(auto increment),氏名、郵便番号、住所、メールアドレス、会員フラグ
+　顧客id(auto increment),氏名、住所、メールアドレス、会員フラグ
 注文テーブル (orders)
 　注文id(auto increment),顧客ID,金額,注文日時、キャンセルフラグ、発送済みフラグ　
 注文詳細テーブル (orders_detail)
@@ -21,11 +21,12 @@ create table product (
 id int AUTO_INCREMENT,
 name text not null,
 detail text,
+price int,
 recommend boolean,
 order_start datetime,
 order_end datetime,
-price int,
 image text,
+regist_date datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 primary key (id));
 
 insert into product (name, detail, price, recommend,image) values ("hoge", "hogehoge", 2000, 0, null);
@@ -36,10 +37,11 @@ insert into product (name, detail, price, recommend,image) values ("daba", "daba
 insert into product (name, detail, price, recommend,image) values ("バラの花束かも", "たぶんバラの花束です", 2000, 1, "rose.jpg");
 
 create table customer(
-id int AUTO_INCREMENT, 
-name text not null, 
-address text not null, 
-email text not null, 
+id int AUTO_INCREMENT,
+name text not null,
+address text not null,
+email text not null,
+credit text not null,
 member int(1),
 primary key (id));
 
@@ -53,6 +55,6 @@ order_date datetime
 create table order_detail (
  id int,
  order_id int,
- product_it int,
- number int
+ product_id int,
+ count int
 ); 
