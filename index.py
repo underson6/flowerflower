@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template, request, redirect, url_for, session
 from commons import randomMessage
+from commons import validationUtil
 from models.Product import Product
 from models.Customer import Customer
 
@@ -170,16 +171,50 @@ def orderInput():
     return render_template("inputCustomerInfo.html", title=title)
 
 
-@app.route("/customerInfoConfirm")
+@app.route("/customerInfoConfirm", methods=["POST"])
 def orderConfirm():
     """注文情報確認画面を表示"""
     title = u"注文確認画面"
+
+    isAllInput = True
+
+    if validationUtil.isEmpty(request.form["name"]) == False:
+        session["name"] = request.form["name"]
+    else:
+        isAllInput = False
+    if validationUtil.isEmpty(request.form["address"]) == False:
+        session["address"] = request.form["address"]
+    else:
+        isAllInput = False
+    if validationUtil.isEmpty(request.form["email"]) == False:
+        session["email"] = request.form["email"]
+    else:
+        isAllInput = False
+    if validationUtil.isEmpty(request.form["credit"]) == False:
+        session["credit"] = request.form["credit"]
+    else:
+        isAllInput = False
+
+
+    if isAllInput == False:
+        title = u"注文情報入力画面"
+        message = "入力ミスがあります"
+        return render_template("inputCustomerInfo.html", title=title, message=message)
+
     return render_template("inputCustomerConfirm.html", title=title)
 
 
 @app.route("/orderComplete")
 def orderComplete():
     """注文完了画面を表示"""
+
+    """
+    以下のテーブルに登録
+    customer
+    order
+    order_detail
+    """
+
     title = u"注文完了"
     return render_template("orderComplete.html", title=title)
 

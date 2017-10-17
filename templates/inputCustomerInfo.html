@@ -1,6 +1,29 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<a href="{{ url_for('orderConfirm') }}">注文確認画面へ</a>
+<a  class="btn btn-default" href="{{ url_for('orderConfirm') }}">注文確認画面へ</a>
+
+<form action="{{ url_for('orderConfirm') }}" method="post">
+    <table class="table-bordered">
+        <tr>
+            <th>お名前</th><td><input type="text" name="name" value="{% if session['name'] %}{{ session['name'] }}{% endif%}" placeholder="(例)山田 太郎" required> </td>
+        </tr>
+        <tr>
+            <th>お届け先</th><td><input type="text" name="address" value="{% if session['address'] %}{{ session['address'] }}{% endif%}" placeholder="神奈川県川崎市" required> </td>
+        </tr>
+        <tr>
+            <th>メールアドレス</th><td><input type="email" name="email" value="{% if session['email'] %}{{ session['email'] }}{% endif%}" placeholder="yamada.taro@yamadataro.com" required> </td>
+        </tr>
+        <tr>
+            <th>クレジット番号</th><td><input type="text" name="credit" placeholder="1234-5678-9012-3456" pattern="\d{4}\-\d{4}\-\d{4}\-\d{4}" required> </td>
+        </tr>
+        <tr>
+            <th>会員になりますか？</th><td><input type="checkbox" name="member" > </td>
+        </tr>
+    </table>
+    <input class="btn btn-default" type="submit" value="最終確認を行う" name="submit">
+</form>
+
+<a  class="btn btn-default" href="{{ url_for('orderConfirm') }}">注文確認画面へ</a>
 
 {% endblock %}
