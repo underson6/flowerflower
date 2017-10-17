@@ -11,9 +11,11 @@ from dao.CustomerDao import CustomerDao
 from dao.CartDao import CartDao
 
 import json, random, os, hashlib
+from werkzeug import secure_filename
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "this is a secret key"
+app.config["UPLOAD_FOLDER"] = "static/images/"
 
 
 @app.before_request
@@ -219,12 +221,69 @@ def orderComplete():
     return render_template("orderComplete.html", title=title)
 
 
+@app.route("/addProduct", methods=["GET", "POST"])
+def addProduct():
+    """商品追加ページの処理"""
+    title = u"商品追加ページ"
+
+    name = ""
+    price = 0
+    recommend = 0
+    detail = ""
+    fileName = ""
+
+    if request.method == "POST":
+        if validationUtil.isEmpty(request.form["name"]) == True:
+            m = hashlib.sha256()
+            m.update(os.urandom(64))
+            randomStr = m.hexdigest()
+            name = randomStr
+        else:
+            name = request.form["name"]
+
+        if validationUtil.isEmpty(request.form["price"]) == False:
+            price = request.form["price"]
+
+        if validationUtil.isEmpty(request.form["detail"]) == False:
+            detail = request.form["detail"]
+
+        if validationUtil.isEmpty(request.form["recommend"]) == False:
+            recommend = request.form["recommend"]
+
+        if validationUtil.isEmpty(request.files["image_file"]) == False:
+            print(request.files['image_file'].filename)
+
+            image_file = request.files['image_file']
+            # TODO : 画像ファイルであることを確認する
+            image_file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(image_file.filename)))
+
+            os.renames(app.config['UPLOAD_FOLDER'] + secure_filename(image_file.filename), app.config['UPLOAD_FOLDER'] + name + ".jpg")
+
+        product = Product()
+        product.name = name
+        product.price = price
+        product.detail = detail
+        product.image = name + ".jpg"
+        productDao = ProductDao()
+        productDao.addProduct(product, recommend)
+
+
+    else:
+        pass
+
+    print(name)
+    print(price)
+    print(detail)
+    print(recommend)
+
+    return render_template("addProduct.html", title=title)
+
+
 @app.route("/about")
 def about():
     """このサイトについてを表示"""
     title = u"このサイトについて"
     return render_template("about.html", title=title)
-
 
 @app.errorhandler(404)
 def not_found(error):

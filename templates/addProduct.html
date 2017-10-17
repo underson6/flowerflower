@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<form action="{{ url_for('addProduct') }}" method="post" enctype="multipart/form-data">
+    <table class="table-bordered">
+        <tr><th>商品名</th><td><input type="text" name="name"></td></tr>
+        <tr><th>価格(円)</th><td><input type="number" name="price"></td></tr>
+        <tr><th>説明</th><td><input type="text" name="detail"></td></tr>
+        <tr><th>レコメンド対象</th><td><input type="radio" name="recommend" value="1" checked>はい<input type="radio" name="recommend" value="0">いいえ</td></tr>
+        <tr><th>画像</th><td><input id="imgFile" type="file" accept="image/*" name="image_file"><div class="preview"></div></td></tr>
+    </table>
+    <input type="submit" value="submit" name="submit">
+</form>
+
+{% endblock %}
