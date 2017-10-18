@@ -34,16 +34,16 @@ credit text not null,
 member int(1),
 primary key (id));
 
---create table orders (
---id int AUTO_INCREMENT,
---customer_id int,
---amout int,
---order_date datetime
---);
---
---create table order_detail (
--- id int,
--- order_id int,
--- product_id int,
--- count int
---);
+# create table orders (
+# id int AUTO_INCREMENT,
+# customer_id int,
+# amout int,
+# order_date datetime
+# );
+
+# create table order_detail (
+#  id int,
+#  order_id int,
+#  product_id int,
+#  count int
+# );
