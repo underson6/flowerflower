@@ -11,7 +11,7 @@ database:
   override:
   # DB設定ファイルをCircleCI用に差し替え
   - cp dao/conf/dbconf.ini.circle dao/conf/dbconf.ini
-  - mysql -u ubuntu circle_test < database_init.sql
+  - mysql -u ubuntu circle_test < NON_SITE_DATA/database_init.sql
 
 test:
   override:
