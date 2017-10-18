@@ -1,0 +1,14 @@
+pip install nose
+pip install coverage
+
+以下のコマンドでカレントディレクトリ以下のテストを実施
+nosetests
+
+※テストファイルに実行権限がついているとnoseがテストを拾ってくれないから注意。
+
+以下のコマンドでcoverageをhtmlに出力
+nosetests --with-coverage --cover-html --cover-erase
+
+
+python3系でテストを実行するには以下のコマンド
+python3.5 -m nose -v --with-coverage --cover-html --cover-erase --cover-tests

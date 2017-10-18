@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0144b753-45d0-4ef0-a94f-c54458e931b5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/ProductDao.py" afterPath="$PROJECT_DIR$/dao/ProductDao.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.py" afterPath="$PROJECT_DIR$/index.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/layout.html" afterPath="$PROJECT_DIR$/templates/layout.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,10 +21,35 @@
           <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="709">
-                  <caret line="294" column="0" lean-forward="true" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+                <state relative-caret-position="0">
+                  <caret line="295" column="0" lean-forward="false" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
                   <folding>
-                    <element signature="e#25#102#0" expanded="true" />
+                    <marker date="1508308353696" expanded="true" signature="44:444" ph="import ..." />
+                    <marker date="1508308353696" expanded="true" signature="608:937" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="668:837" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="968:1303" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="1360:1610" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="1683:1893" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="1962:2168" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="2227:4005" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="2311:2639" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="2666:2704" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="2881:2988" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="3033:3137" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="3276:3358" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+                    <marker date="1508308353696" expanded="true" signature="3364:3967" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="4039:4330" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="4378:4490" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="4565:5480" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="5265:5410" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="5532:5707" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="5558:5624" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+                    <marker date="1508308353696" expanded="true" signature="5778:7405" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="5937:7247" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="6002:6139" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="6612:7006" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="7441:7543" ph="..." />
+                    <marker date="1508308353696" expanded="true" signature="7589:7697" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -32,19 +58,53 @@
           <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/layout.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="350">
-                  <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+                <state relative-caret-position="450">
+                  <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="addProduct.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="addProduct.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/addProduct.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="350">
                   <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="all_products.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/all_products.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TestValidationUtil.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/commons/TestValidationUtil.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="375">
+                  <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+                  <folding>
+                    <element signature="e#24#65#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TestProductDao.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/test/dao/TestProductDao.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="200">
+                  <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+                  <folding>
+                    <element signature="e#24#65#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -83,19 +143,19 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-          <file leaf-file-name="ProductDao.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="ProductDao.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dao/ProductDao.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="367">
-                  <caret line="142" column="12" lean-forward="false" selection-start-line="142" selection-start-column="12" selection-end-line="142" selection-end-column="12" />
+                <state relative-caret-position="75">
+                  <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="14" />
                   <folding>
-                    <element signature="e#25#39#0" expanded="true" />
+                    <element signature="e#46#60#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/static/js/common.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="700">
@@ -108,7 +168,7 @@
           <file leaf-file-name="CartDao.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dao/CartDao.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1450">
+                <state relative-caret-position="1250">
                   <caret line="59" column="38" lean-forward="false" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
                   <folding>
                     <element signature="e#25#39#0" expanded="true" />
@@ -121,7 +181,7 @@
             <entry file="file://$PROJECT_DIR$/models/Customer.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="150">
-                  <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+                  <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -134,8 +194,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -179,7 +239,6 @@
         <option value="$PROJECT_DIR$/templates/detail.html" />
         <option value="$PROJECT_DIR$/dao/CartDao.py" />
         <option value="$PROJECT_DIR$/templates/404.html" />
-        <option value="$PROJECT_DIR$/dao/ProductDao.py" />
         <option value="$PROJECT_DIR$/templates/orderComplete.html" />
         <option value="$PROJECT_DIR$/templates/cart.html" />
         <option value="$PROJECT_DIR$/templates/inputCustomerConfirm.html" />
@@ -189,11 +248,19 @@
         <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/templates/addProduct.html" />
         <option value="$PROJECT_DIR$/static/js/common.js" />
+        <option value="$PROJECT_DIR$/test/__init__.py" />
+        <option value="$PROJECT_DIR$/test/commons/test_ValidationUtil.py" />
+        <option value="$PROJECT_DIR$/test/commons/__init__.py" />
+        <option value="$PROJECT_DIR$/test/commons/TestValidationUtil.py" />
+        <option value="$PROJECT_DIR$/dao/ProductDao.py" />
+        <option value="$PROJECT_DIR$/test/dao/__init__.py" />
+        <option value="$PROJECT_DIR$/test/dao/TestProductDao.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="330" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="554" />
+    <option name="y" value="2" />
     <option name="width" value="1283" />
     <option name="height" value="1090" />
   </component>
@@ -228,8 +295,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,10 +339,29 @@
               <item name="flowerflower" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="flowerflower" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flowerflower" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flowerflower" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flowerflower" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="commons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flowerflower" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flowerflower" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -325,10 +409,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1102" extended-state="6" />
-    <editor active="true" />
+    <frame x="554" y="2" width="1283" height="1090" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14010416" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21332276" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -358,61 +441,10 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/dao/ProductDao.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Customer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="19" column="9" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#102#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/commons/randomMessage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="24" lean-forward="false" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="16" column="10" lean-forward="false" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/ProductDao.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <element signature="e#25#39#0" expanded="true" />
+            <element signature="e#46#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -443,7 +475,32 @@
         <state relative-caret-position="700">
           <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#25#102#0" expanded="true" />
+            <marker date="1508308353696" expanded="true" signature="44:444" ph="import ..." />
+            <marker date="1508308353696" expanded="true" signature="608:937" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="668:837" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="968:1303" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="1360:1610" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="1683:1893" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="1962:2168" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="2227:4005" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="2311:2639" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="2666:2704" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="2881:2988" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="3033:3137" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="3276:3358" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1508308353696" expanded="true" signature="3364:3967" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="4039:4330" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="4378:4490" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="4565:5480" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="5265:5410" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="5532:5707" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="5558:5624" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1508308353696" expanded="true" signature="5778:7405" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="5937:7247" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="6002:6139" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="6612:7006" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="7441:7543" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="7589:7697" ph="..." />
           </folding>
         </state>
       </provider>
@@ -483,7 +540,32 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#25#102#0" expanded="true" />
+            <marker date="1508308353696" expanded="true" signature="44:444" ph="import ..." />
+            <marker date="1508308353696" expanded="true" signature="608:937" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="668:837" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="968:1303" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="1360:1610" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="1683:1893" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="1962:2168" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="2227:4005" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="2311:2639" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="2666:2704" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="2881:2988" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="3033:3137" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="3276:3358" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1508308353696" expanded="true" signature="3364:3967" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="4039:4330" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="4378:4490" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="4565:5480" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="5265:5410" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="5532:5707" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="5558:5624" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1508308353696" expanded="true" signature="5778:7405" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="5937:7247" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="6002:6139" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="6612:7006" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="7441:7543" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="7589:7697" ph="..." />
           </folding>
         </state>
       </provider>
@@ -569,24 +651,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/DaoUtil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/recommend.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/all_products.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="25" column="18" lean-forward="false" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -640,16 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/CartDao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1450">
-          <caret line="59" column="38" lean-forward="false" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
-          <folding>
-            <element signature="e#25#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/orderComplete.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -690,35 +748,66 @@
     <entry file="file://$PROJECT_DIR$/models/Customer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/ProductDao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="142" column="12" lean-forward="false" selection-start-line="142" selection-start-column="12" selection-end-line="142" selection-end-column="12" />
-          <folding>
-            <element signature="e#25#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="709">
-          <caret line="294" column="0" lean-forward="true" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="295" column="0" lean-forward="false" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
           <folding>
-            <element signature="e#25#102#0" expanded="true" />
+            <marker date="1508308353696" expanded="true" signature="44:444" ph="import ..." />
+            <marker date="1508308353696" expanded="true" signature="608:937" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="668:837" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="968:1303" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="1360:1610" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="1683:1893" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="1962:2168" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="2227:4005" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="2311:2639" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="2666:2704" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="2881:2988" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="3033:3137" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="3276:3358" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1508308353696" expanded="true" signature="3364:3967" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="4039:4330" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="4378:4490" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="4565:5480" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="5265:5410" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="5532:5707" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="5558:5624" ph="&quot;&quot;&quot;...&quot;&quot;&quot;" />
+            <marker date="1508308353696" expanded="true" signature="5778:7405" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="5937:7247" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="6002:6139" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="6612:7006" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="7441:7543" ph="..." />
+            <marker date="1508308353696" expanded="true" signature="7589:7697" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/layout.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/addProduct.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
-          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -731,11 +820,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/addProduct.html">
+    <entry file="file://$PROJECT_DIR$/templates/all_products.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/DaoUtil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/CartDao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1250">
+          <caret line="59" column="38" lean-forward="false" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+          <folding>
+            <element signature="e#25#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/commons/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/commons/TestValidationUtil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding>
+            <element signature="e#24#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dao/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/ProductDao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="14" />
+          <folding>
+            <element signature="e#46#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cover/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dao/TestProductDao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="e#24#65#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
