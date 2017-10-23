@@ -25,4 +25,4 @@ class TestValidationUtil(object):
 
     def test_validationUtil_fail2(self):
         a = "aaa"
-        assert validationUtil.isEmpty(a) is True
+        assert validationUtil.isEmpty(a) is False
