@@ -9,9 +9,9 @@ dependencies:
 
 database:
   override:
-  # DB設定ファイルをCircleCI用に差し替え
-  - cp dao/conf/dbconf.ini.circle dao/conf/dbconf.ini
-  - mysql -u ubuntu circle_test < NON_SITE_DATA/database_init.sql
+    # DB設定ファイルをCircleCI用に差し替え
+    - cp dao/conf/dbconf.ini.circle dao/conf/dbconf.ini
+    - mysql -u ubuntu circle_test < NON_SITE_DATA/database_init.sql
 
 test:
   override:
@@ -19,3 +19,4 @@ test:
   post:
   # DB設定ファイルをオリジナルに戻す
     - cp dao/conf/dbconf.ini.org dao/conf/dbconf.ini
+    - mv cover $CIRCLE_ARTIFACTS
