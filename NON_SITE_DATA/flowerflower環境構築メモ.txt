@@ -1,0 +1,56 @@
+■CentOS7インストール
+　頑張ってインストールする
+　頑張ってネットワーク設定する
+
+
+■パッケージを最新に更新する
+　yum -y update
+
+
+■Python3系をインストールする
+　yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+
+　yum -y install python35u
+　yum -y install python35u-libs
+　yum -y install python35u-devel
+　yum -y install python35u-pip
+
+　python3.5 -v # pythonのバージョンが表示されること
+
+
+■Flaskをインストールする
+　python3.5 -m pip install Flask
+　python3.5 -m pip freeze # flaskが表示されること
+
+
+■MySQL5.7をインストールする
+　yum -y remove mariadb-libs
+　sudo yum -y install http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
+　yum -y install mysql-community-server
+　mysql -V # mysqlのバージョンが表示されること
+
+
+■PythonからMySQLに接続するためにMySQLdbをインストールする
+　sudo yum -y install gcc
+　sudo yum -y install mysql-community-devel.x86_64
+
+　python3.5 -m pip install MySQLdb
+　python3.5 -m pip freeze # MySQLdbが表示されること
+
+
+■MySQLの設定を変更する
+　vi /etc/yum.cnf
+
+　[mysqld]
+　character-default-set = utf-8 # 追加する
+
+
+■MySQLを自動起動設定する
+　systemctl enable mysqld
+
+
+■MySQLを起動する
+　systemctl start mysqld
+　mysql -u root # mysqlに接続できること
+　CREATE DATABASE flowerflower;
+　SHOW DATABASES;
