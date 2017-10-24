@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0144b753-45d0-4ef0-a94f-c54458e931b5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/images/rose.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dao/ProductDao.py" afterPath="$PROJECT_DIR$/dao/ProductDao.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.py" afterPath="$PROJECT_DIR$/index.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,8 +66,8 @@
           <file leaf-file-name="ProductDao.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dao/ProductDao.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="500">
-                  <caret line="147" column="99" lean-forward="true" selection-start-line="147" selection-start-column="99" selection-end-line="147" selection-end-column="99" />
+                <state relative-caret-position="600">
+                  <caret line="239" column="29" lean-forward="true" selection-start-line="239" selection-start-column="29" selection-end-line="239" selection-end-column="29" />
                   <folding>
                     <element signature="e#25#39#0" expanded="true" />
                   </folding>
@@ -189,8 +186,8 @@
         <option value="$PROJECT_DIR$/models/Product.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/all_products.html" />
-        <option value="$PROJECT_DIR$/dao/ProductDao.py" />
         <option value="$PROJECT_DIR$/index.py" />
+        <option value="$PROJECT_DIR$/dao/ProductDao.py" />
       </list>
     </option>
   </component>
@@ -751,22 +748,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/ProductDao.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="147" column="99" lean-forward="true" selection-start-line="147" selection-start-column="99" selection-end-line="147" selection-end-column="99" />
-          <folding>
-            <element signature="e#25#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="492">
           <caret line="278" column="25" lean-forward="false" selection-start-line="278" selection-start-column="25" selection-end-line="278" selection-end-column="25" />
           <folding>
             <element signature="e#25#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/ProductDao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="239" column="29" lean-forward="true" selection-start-line="239" selection-start-column="29" selection-end-line="239" selection-end-column="29" />
+          <folding>
+            <element signature="e#25#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

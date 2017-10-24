@@ -20,7 +20,7 @@ class ProductDao:
         cursor = None
         products = []
         try:
-            sql = "SELECT * FROM product"
+            sql = "SELECT * FROM product ORDER BY regist_date DESC"
             daoUtil = DaoUtil()
             con = daoUtil.getConnection()
             cursor = con.cursor(MySQLdb.cursors.DictCursor)
@@ -99,7 +99,7 @@ class ProductDao:
         cursor = None
         products = []
         try:
-            sql = "SELECT * FROM product WHERE recommend = 1"
+            sql = "SELECT * FROM product WHERE recommend = 1 ORDER BY regist_date DESC"
             daoUtil = DaoUtil()
             con = daoUtil.getConnection()
             cursor = con.cursor(MySQLdb.cursors.DictCursor)
@@ -168,7 +168,7 @@ class ProductDao:
         cursor = None
         products = []
         try:
-            sql = "SELECT * FROM product WHERE tag = %(tag)s"
+            sql = "SELECT * FROM product WHERE tag = %(tag)s ORDER BY regist_date DESC"
             daoUtil = DaoUtil()
             con = daoUtil.getConnection()
             cursor = con.cursor(MySQLdb.cursors.DictCursor)
