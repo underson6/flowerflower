@@ -137,8 +137,6 @@ class ProductDao:
         con = None
         cursor = None
         isSuccess = False
-        print("aaaaaaaaaaaaa : ")
-        print(product.price)
         try:
             sql = "INSERT INTO product (name, detail, price, recommend, tag, image) VALUES (%s, %s, %s, %s, %s, %s);"
             daoUtil = DaoUtil()
@@ -168,11 +166,11 @@ class ProductDao:
         cursor = None
         products = []
         try:
-            sql = "SELECT * FROM product WHERE tag = %(tag)s ORDER BY regist_date DESC"
+            sql = "SELECT * FROM product WHERE tag LIKE %(tag)s ORDER BY regist_date DESC"
             daoUtil = DaoUtil()
             con = daoUtil.getConnection()
             cursor = con.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute(sql, {"tag":tag})
+            cursor.execute(sql, {"tag":"%"+tag+"%"})
             results = cursor.fetchall()
 
             for result in results:
