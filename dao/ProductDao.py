@@ -137,13 +137,15 @@ class ProductDao:
         con = None
         cursor = None
         isSuccess = False
+        print("aaaaaaaaaaaaa : ")
+        print(product.price)
         try:
             sql = "INSERT INTO product (name, detail, price, recommend, tag, image) VALUES (%s, %s, %s, %s, %s, %s);"
             daoUtil = DaoUtil()
             con = daoUtil.getConnection()
             cursor = con.cursor()
             cursor.execute("SET CHARACTER SET utf8")
-            cursor.execute(sql, (product.name, product.detail, int(product.price), int(recommend), int(product.tag), product.image))
+            cursor.execute(sql, (product.name, product.detail, int(product.price), int(recommend), product.tag, product.image))
             con.commit()
             isSuccess = True
         except MySQLdb.Error as e:

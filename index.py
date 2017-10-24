@@ -10,12 +10,12 @@ from dao.ProductDao import ProductDao
 from dao.CustomerDao import CustomerDao
 from dao.CartDao import CartDao
 
-import json, random, os, hashlib
+import json, random, os, hashlib, shutil
 from werkzeug import secure_filename
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "this is a secret key"
-app.config["UPLOAD_FOLDER"] = "static/images/"
+app.config["UPLOAD_FOLDER"] = "static/images/tmp/"
 
 
 @app.before_request
@@ -243,10 +243,12 @@ def addProduct():
     randomStr = ""
 
     if request.method == "POST":
+        m = hashlib.sha256()
+        m.update(os.urandom(64))
+        randomStr = m.hexdigest()
+        print("randomstr1 : " +randomStr)
+
         if validationUtil.isEmpty(request.form["name"]) == True:
-            m = hashlib.sha256()
-            m.update(os.urandom(64))
-            randomStr = m.hexdigest()
             name = randomStr
         else:
             name = request.form["name"]
@@ -270,8 +272,11 @@ def addProduct():
             # TODO : 画像ファイルであることを確認する
             image_file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(image_file.filename)))
 
-            os.renames(app.config['UPLOAD_FOLDER'] + secure_filename(image_file.filename), app.config['UPLOAD_FOLDER'] + name + ".jpg")
+            # os.renames(app.config['UPLOAD_FOLDER'] + secure_filename(image_file.filename), app.config['UPLOAD_FOLDER'] + "../" + randomStr + ".jpg")
+            shutil.move(app.config['UPLOAD_FOLDER'] + secure_filename(image_file.filename),
+                        app.config['UPLOAD_FOLDER'] + "../" + randomStr + ".jpg")
 
+        print("randomstr2 : " +randomStr)
         product = Product()
         product.name = name
         product.price = price
