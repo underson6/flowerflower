@@ -33,6 +33,7 @@ class ProductDao:
                 product.name = result["name"]
                 product.price = result["price"]
                 product.detail = result["detail"]
+                product.tag = result["tag"]
                 product.image = result["image"]
                 products.append(product)
 
@@ -72,6 +73,7 @@ class ProductDao:
                 product.name = result["name"]
                 product.price = result["price"]
                 product.detail = result["detail"]
+                product.tag = result["tag"]
                 product.image = result["image"]
 
         except MySQLdb.Error as e:
@@ -91,7 +93,7 @@ class ProductDao:
 
 
     def getRecommendProduct(self):
-        u""" productテーブルから指定されたIDの情報を全て取得する """
+        u""" productテーブルからお勧め商品を全て取得する """
 
         con = None
         cursor = None
@@ -110,6 +112,7 @@ class ProductDao:
                 product.name = result["name"]
                 product.price = result["price"]
                 product.detail = result["detail"]
+                product.tag = result["tag"]
                 product.image = result["image"]
                 products.append(product)
 
@@ -135,12 +138,12 @@ class ProductDao:
         cursor = None
         isSuccess = False
         try:
-            sql = "INSERT INTO product (name, detail, price, recommend, image) VALUES (%s, %s, %s, %s, %s);"
+            sql = "INSERT INTO product (name, detail, price, recommend, tag, image) VALUES (%s, %s, %s, %s, %s, %s);"
             daoUtil = DaoUtil()
             con = daoUtil.getConnection()
             cursor = con.cursor()
             cursor.execute("SET CHARACTER SET utf8")
-            cursor.execute(sql, (product.name, product.detail, int(product.price), int(recommend), product.image))
+            cursor.execute(sql, (product.name, product.detail, int(product.price), int(recommend), int(product.tag), product.image))
             con.commit()
             isSuccess = True
         except MySQLdb.Error as e:
@@ -154,6 +157,72 @@ class ProductDao:
                 print(e)
 
         return isSuccess
+
+
+    def getProductByTag(self, tag):
+        """ タグ名で検索する """
+
+        con = None
+        cursor = None
+        products = []
+        try:
+            sql = "SELECT * FROM product WHERE tag = %(tag)s"
+            daoUtil = DaoUtil()
+            con = daoUtil.getConnection()
+            cursor = con.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute(sql, {"tag":tag})
+            results = cursor.fetchall()
+
+            for result in results:
+                product = Product()
+                product.id = result["id"]
+                product.name = result["name"]
+                product.price = result["price"]
+                product.detail = result["detail"]
+                product.tag = result["tag"]
+                product.image = result["image"]
+                products.append(product)
+
+        except MySQLdb.Error as e:
+            pass
+        finally:
+            try:
+                if cursor is not None:
+                    cursor.close()
+                    cursor = None
+            except MySQLdb.Error as e:
+                pass
+
+        return products
+
+
+    def getTagList(self):
+        """ タグ名の一覧を取得する """
+        con = None
+        cursor = None
+        tags = []
+        try:
+            sql = "SELECT DISTINCT tag FROM product"
+            daoUtil = DaoUtil()
+            con = daoUtil.getConnection()
+            cursor = con.cursor(MySQLdb.cursors.DictCursor)
+            cursor.execute(sql)
+            results = cursor.fetchall()
+
+            for result in results:
+                tags.append(result["tag"])
+
+        except MySQLdb.Error as e:
+            print(e)
+        finally:
+            try:
+                if cursor is not None:
+                    cursor.close()
+                    cursor = None
+            except MySQLdb.Error as e:
+                pass
+
+        return tags
 
 
     def updateProduct(self, id, product):

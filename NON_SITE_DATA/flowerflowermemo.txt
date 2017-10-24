@@ -1,5 +1,5 @@
 商品テーブル (product)
-　商品id(auto increment),商品名、価格、説明、レコメンドフラグ、受注開始日、受注終了日、画像ファイルパス
+　商品id(auto increment),商品名、価格、説明、レコメンドフラグ、タグ、受注開始日、受注終了日、画像ファイルパス
 顧客テーブル (customer)
 　顧客id(auto increment),氏名、住所、メールアドレス、会員フラグ
 注文テーブル (orders)
@@ -23,6 +23,7 @@ name text not null,
 detail text,
 price int,
 recommend boolean,
+tag text,
 order_start datetime,
 order_end datetime,
 image text,

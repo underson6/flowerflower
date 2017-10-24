@@ -78,7 +78,15 @@ def recommend():
 
     return render_template('recommend.html', title=title, products=products)
 
-    pass
+
+@app.route("/search/tag/<string:tag>", methods=["GET", "POST"])
+def searchTag(tag):
+    """タグで検索"""
+    title = u"タグ検索:" + tag
+    productDao = ProductDao()
+    products = productDao.getProductByTag(tag)
+
+    return render_template('all_products.html', title=title, products=products)
 
 
 @app.route("/cart/add", methods=["POST"])
@@ -230,7 +238,9 @@ def addProduct():
     price = 0
     recommend = 0
     detail = ""
+    tag = ""
     fileName = ""
+    randomStr = ""
 
     if request.method == "POST":
         if validationUtil.isEmpty(request.form["name"]) == True:
@@ -250,6 +260,9 @@ def addProduct():
         if validationUtil.isEmpty(request.form["recommend"]) == False:
             recommend = request.form["recommend"]
 
+        if validationUtil.isEmpty(request.form["tag"]) == False:
+            tag = request.form["tag"]
+
         if validationUtil.isEmpty(request.files["image_file"]) == False:
             print(request.files['image_file'].filename)
 
@@ -263,7 +276,8 @@ def addProduct():
         product.name = name
         product.price = price
         product.detail = detail
-        product.image = name + ".jpg"
+        product.tag = tag
+        product.image = randomStr + ".jpg"
         productDao = ProductDao()
         productDao.addProduct(product, recommend)
 
