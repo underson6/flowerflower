@@ -5,6 +5,7 @@ class Cart():
     def __init__(self):
         self.sessionId = ""
         self.productId = 0
+        self.name = ""
         self.count = 0
         self.price = 0
         self.amount = 0

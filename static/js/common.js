@@ -36,3 +36,10 @@ $.addEventListener('DOMContentLoaded', function() {
         reader.readAsDataURL(file);
     });
 });
+
+jQuery(function () {
+    jQuery("span.product-tag").click(function() {
+        jQuery("input[name=tag]").val(jQuery(this).text());
+    });
+});
+

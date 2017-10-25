@@ -9,7 +9,14 @@
         <tr><th>タグ</th>
             <td>
                 <input type="text" name="tag"><br/>
-                <div id="tag"><!--　TODO 過去に投稿されたタグを表示する --></div>
+                <div id="tag">
+                    <!--　TODO 過去に投稿されたタグを表示する -->
+                    {% if tags %}
+                        {% for tag in tags %}
+                            <span class="glyphicon glyphicon-tag"><span class="product-tag ">{{ tag }}</span></span>
+                        {% endfor %}
+                    {% endif %}
+                </div>
             </td>
         </tr>
         <tr><th>レコメンド対象</th><td><input type="radio" name="recommend" value="1" checked>はい<input type="radio" name="recommend" value="0">いいえ</td></tr>

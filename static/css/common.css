@@ -45,3 +45,23 @@
 span#subtitle {
     color: white;
 }
+nav {
+    background: #fbfcf9;
+}
+
+/* Top画面、フッター部分 */
+#footer {
+    background: #eaedeb;
+    margin-top: 20px;
+    color: black;
+}
+
+/* 各商品の行の間に空白を作る */
+.row {
+    margin-top: 10px;
+}
+
+/* 商品追加画面 */
+span.product-tag {
+    background: url() no-repeat;
+}

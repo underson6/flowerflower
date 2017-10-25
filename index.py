@@ -40,7 +40,7 @@ def hello():
     # message = randomMessage.pick_up()
     productDao = ProductDao()
     products = productDao.getAllProduct()
-    sample = random.sample(products, 3)
+    sample = random.sample(products, 6)
     message = "hogehogeee"
     return render_template("index.html", title=title, message=message, products=sample)
     # return "Hello Flask!"
@@ -241,12 +241,12 @@ def addProduct():
     tag = ""
     fileName = ""
     randomStr = ""
+    productDao = ProductDao()
 
     if request.method == "POST":
         m = hashlib.sha256()
         m.update(os.urandom(64))
         randomStr = m.hexdigest()
-        print("randomstr1 : " +randomStr)
 
         if validationUtil.isEmpty(request.form["name"]) == True:
             name = randomStr
@@ -276,26 +276,28 @@ def addProduct():
             shutil.move(app.config['UPLOAD_FOLDER'] + secure_filename(image_file.filename),
                         app.config['UPLOAD_FOLDER'] + "../" + randomStr + ".jpg")
 
-        print("randomstr2 : " +randomStr)
         product = Product()
         product.name = name
         product.price = price
         product.detail = detail
         product.tag = tag
         product.image = randomStr + ".jpg"
-        productDao = ProductDao()
+
         productDao.addProduct(product, recommend)
 
-
+    # HTTP GET
     else:
         pass
+
+    """今までに投稿されたタグを取得する"""
+    tags = productDao.getTagList()
 
     print(name)
     print(price)
     print(detail)
     print(recommend)
 
-    return render_template("addProduct.html", title=title)
+    return render_template("addProduct.html", title=title, tags=tags)
 
 
 @app.route("/about")

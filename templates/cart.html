@@ -8,14 +8,15 @@
         <h1>とれてないよ</h1>
     {% endif %}
 
+<div class="container">
     <table class="table table-hover">
         {% if cartItems %}
+            <tr><th>商品名</th><th>個数</th><th>合計金額</th><th></th></tr>
             {% for cartItem in cartItems %}
                 <tr>
-                    <td>{{ cartItem.productId }}</td>
+                    <td>{{ cartItem.name }}</td>
                     <td>{{ cartItem.count }}</td>
                     <td>{{ cartItem.price }}</td>
-                    <td>{{ cartItem.amount }}</td>
                     <td>
                     {% if cartItem.image %}
                       <a href="/detail/{{ cartItem.productId }}" class="thumbnail"><img src="/static/images/{{ cartItem.image }}" width="128" height="128" alt="flowerflower" title="flowerflower"></a>
@@ -28,7 +29,7 @@
         {% endif %}
     </table>
     <p>合計金額: {{ amount }}</p>
-
+</div>
     <a class="btn btn-default" href="{{ url_for('orderInput') }}">注文情報を入力する</a>
 
 {% endblock %}

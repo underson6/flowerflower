@@ -202,7 +202,7 @@ class ProductDao:
         cursor = None
         tags = []
         try:
-            sql = "SELECT DISTINCT tag FROM product"
+            sql = "SELECT DISTINCT tag FROM product WHERE tag IS NOT null AND tag <> ''"
             daoUtil = DaoUtil()
             con = daoUtil.getConnection()
             cursor = con.cursor(MySQLdb.cursors.DictCursor)
@@ -210,7 +210,8 @@ class ProductDao:
             results = cursor.fetchall()
 
             for result in results:
-                tags.append(result["tag"])
+                for i in result["tag"].split(","):
+                    tags.append(i)
 
         except MySQLdb.Error as e:
             print(e)
