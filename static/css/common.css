@@ -35,3 +35,13 @@
     background-size: 100% auto !important;
 }
 /* ツールチップ用 ここまで */
+
+/* Top画像部分 */
+.jumbotron {
+    background: url(/static/images/top.jpg) center no-repeat;
+    background-size: cover;
+    color: white;
+}
+span#subtitle {
+    color: white;
+}
