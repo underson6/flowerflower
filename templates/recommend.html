@@ -1,21 +1,23 @@
 {% extends "layout.html" %}
 {% block content %}
 
-{% if products %}
-  {% for product in products %}
-    <table class="table table-hover">
-      <tr>
-        <td>{{ product.name }}</td>
-        <td>{{ product.price }}</td>
-        <td>{{ product.detail }}</td>
-        {% if product.image %}
-          <td><span data-balloon="{{ product.detail }}" data-balloon-pos="up" data-balloon-length="fit"><a href="/detail/{{ product.id }}"><img src="/static/images/{{ product.image }}" width="128" height="128" alt="flowerflower" title="flowerflower"></a></span></td>
-        {% else %}
-          <td><a href="/detail/{{ product.id }}"><img src="/static/images/no_image.jpg" width="128" height="128" alt="no_image" title="flowerflower"></a></td>
-        {% endif %}
-      </tr>
-    </table>
-  {% endfor %}
-{% endif %}
-
+<div class="container">
+  {% if products %}
+    {% for product in products %}
+      {% if loop.index0 % 3 == 0 %}
+        <div class="row o-3column">
+      {% endif %}
+          <div class="col-sm-4">
+            {% if product.image %}
+              <span data-balloon="{{ product.detail }}" data-balloon-pos="up" data-balloon-length="fit"><a href="/detail/{{ product.id }}" class="thumbnail"><img src="/static/images/{{ product.image }}" width="128" height="128" alt="flowerflower" title="flowerflower" class="img-responsive" style="width:100%;height:auto;"></a></span>
+            {% else %}
+              <span data-balloon="{{ product.detail }}" data-balloon-pos="up" data-balloon-length="fit"><a href="/detail/{{ product.id }}" class="thumbnail"><img src="/static/images/no_image.jpg" width="128" height="128" alt="no_image" title="flowerflower"></a></span>
+            {% endif %}
+          </div>
+      {% if loop.index % 3 == 0 %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
 {% endblock %}
