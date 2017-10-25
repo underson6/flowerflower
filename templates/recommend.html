@@ -9,7 +9,7 @@
         <td>{{ product.price }}</td>
         <td>{{ product.detail }}</td>
         {% if product.image %}
-          <td><a href="/detail/{{ product.id }}"><img src="/static/images/{{ product.image }}" width="128" height="128" alt="flowerflower" title="flowerflower"></a> </td>
+          <td><span data-balloon="{{ product.detail }}" data-balloon-pos="up" data-balloon-length="fit"><a href="/detail/{{ product.id }}"><img src="/static/images/{{ product.image }}" width="128" height="128" alt="flowerflower" title="flowerflower"></a></span></td>
         {% else %}
           <td><a href="/detail/{{ product.id }}"><img src="/static/images/no_image.jpg" width="128" height="128" alt="no_image" title="flowerflower"></a></td>
         {% endif %}
