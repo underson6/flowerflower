@@ -8,10 +8,22 @@
         <h1>とれてないよ</h1>
     {% endif %}
 
-    <table>
+    <table class="table table-hover">
         {% if cartItems %}
             {% for cartItem in cartItems %}
-                <tr><td>{{ cartItem.productId }}</td><td>{{ cartItem.count }}</td><td>{{ cartItem.price }}</td><td>{{ cartItem.amount }}</td></tr>
+                <tr>
+                    <td>{{ cartItem.productId }}</td>
+                    <td>{{ cartItem.count }}</td>
+                    <td>{{ cartItem.price }}</td>
+                    <td>{{ cartItem.amount }}</td>
+                    <td>
+                    {% if cartItem.image %}
+                      <a href="/detail/{{ cartItem.productId }}" class="thumbnail"><img src="/static/images/{{ cartItem.image }}" width="128" height="128" alt="flowerflower" title="flowerflower"></a>
+                    {% else %}
+                      <a href="/detail/{{ cartItem.productId }}" class="thumbnail"><img src="/static/images/no_image.jpg" width="128" height="128" alt="no_image" title="flowerflower"></a>
+                    {% endif %}
+                    </td>
+                </tr>
             {% endfor %}
         {% endif %}
     </table>

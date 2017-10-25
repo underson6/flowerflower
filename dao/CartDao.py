@@ -19,7 +19,7 @@ class CartDao:
         cartItems = []
         try:
             sql = """
-                SELECT cart.product_id as id, cart.count as count, product.price as price, cart.count * product.price as amount FROM cart 
+                SELECT cart.product_id as id, cart.count as count, product.price as price, cart.count * product.price as amount, product.image as image FROM cart 
                 LEFT JOIN product 
                 ON cart.product_id = product.id 
                 WHERE session_id = %(id)s
@@ -36,6 +36,7 @@ class CartDao:
                 cart.count = result["count"]
                 cart.price = result["price"]
                 cart.amount = result["amount"]
+                cart.image = result["image"]
                 cartItems.append(cart)
 
         except MySQLdb.Error as e:
