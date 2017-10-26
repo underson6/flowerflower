@@ -11,7 +11,7 @@ from dao.ProductDao import ProductDao
 from dao.CustomerDao import CustomerDao
 from dao.CartDao import CartDao
 
-import json, random, os, hashlib, shutil
+import json, random, os, hashlib, shutil, zipfile, socket
 from werkzeug import secure_filename
 
 app = Flask(__name__)
@@ -297,6 +297,29 @@ def addProduct():
     print(recommend)
 
     return render_template("addProduct.html", title=title, tags=tags)
+
+
+@app.route("/download", methods=["POST"])
+def download():
+    """指定した画像ファイルをZIP形式でダウンロードするURLにリダイレクトする"""
+    title = u"ダウンロード"
+
+    _DOWNLOAD_DIRECTORY = "static/download/"
+
+    cartItems = request.args.getlist("cartItem")
+    print("##################################")
+    print(cartItems)
+    print(socket.gethostbyname_ex(socket.gethostname()))
+
+    zipFileName = Util.getRandomStr() + ".zip"
+    zipFile = zipfile.ZipFile(_DOWNLOAD_DIRECTORY + zipFileName, "w", zipfile.ZIP_STORED)
+
+    for cartItem in cartItems:
+        zipFile.write(cartItem)
+
+    zipFile.close()
+
+    return render_template("download.html", title=title, zipfile=_DOWNLOAD_DIRECTORY + zipFileName)
 
 
 @app.route("/about")

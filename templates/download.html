@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block content %}
+{% if zipfile %}
+以下からダウンロードしてください。
+<p><a href="{{ zipfile }}">DownLoad!</a></p>
+{% endif %}
+{% endblock %}
