@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, render_template, request, redirect, url_for, session
-from commons import randomMessage
 from commons import validationUtil
 from commons.Util import *
 from models.Product import Product
@@ -11,7 +10,7 @@ from dao.ProductDao import ProductDao
 from dao.CustomerDao import CustomerDao
 from dao.CartDao import CartDao
 
-import json, random, os, hashlib, shutil, zipfile, socket
+import random, os, hashlib, shutil, zipfile
 from werkzeug import secure_filename
 
 app = Flask(__name__)
