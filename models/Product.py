@@ -8,4 +8,5 @@ class Product:
         self.price = 0
         self.detail = ""
         self.tag = ""
+        self.recommend = False
         self.image = "/static/images/no_images.jpg"

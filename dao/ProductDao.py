@@ -78,6 +78,8 @@ class ProductDao:
 
         except MySQLdb.Error as e:
             pass
+        except Exception as e:
+            pass
         finally:
             try:
                 if cursor is not None:

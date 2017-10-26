@@ -19,12 +19,12 @@ image text,
 regist_date datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 primary key (id));
 
-insert into product (name, detail, price, recommend, image) values ("hoge", "hogehoge", 2000, 0, null);
-insert into product (name, detail, price, recommend, image) values ("fuga", "fugafuga", 2000, 0, null);
-insert into product (name, detail, price, recommend, image) values ("gaba", "gabagaba", 2000, 1, null);
-insert into product (name, detail, price, recommend, image) values ("gaba", "gabagaba", 2000, 0, null);
-insert into product (name, detail, price, recommend, image) values ("daba", "dabadaba", 2000, 0, null);
-insert into product (name, detail, price, recommend, image) values ("gaba", "gabagaba", 2000, 1, "rose.jpg");
+insert into product (name, detail, price, recommend, tag, image) values ("hoge", "hogehoge", 2000, 0, "aaa", null);
+insert into product (name, detail, price, recommend, tag, image) values ("fuga", "fugafuga", 2000, 0, "bbb", null);
+insert into product (name, detail, price, recommend, tag, image) values ("gaba", "gabagaba", 2000, 1, "ccc", null);
+insert into product (name, detail, price, recommend, tag, image) values ("gaba", "gabagaba", 2000, 0, "aaa,bbb", null);
+insert into product (name, detail, price, recommend, tag, image) values ("daba", "dabadaba", 2000, 0, "", null);
+insert into product (name, detail, price, recommend, tag, image) values ("gaba", "gabagaba", 2000, 1, "", "rose.jpg");
 
 create table customer(
 id int AUTO_INCREMENT,
