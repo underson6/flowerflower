@@ -9,7 +9,7 @@
         <td>{{ product.price }}</td>
         <td>{{ product.detail }}</td>
         {% if product.image %}
-          <td><img src="/static/images/{{ product.image }}" width="128" height="128" alt="flowerflower" title="flowerflower"> </td>
+          <td><a href="/static/images/{{ product.image }}"><img src="/static/images/thumbnail/{{ product.image }}" width="128" height="128" alt="flowerflower" title="flowerflower"></a></td>
         {% else %}
           <td><img src="/static/images/no_image.jpg" width="128" height="128" alt="no_image" title="flowerflower"> </td>
         {% endif %}

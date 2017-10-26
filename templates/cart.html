@@ -9,7 +9,7 @@
                 {% for cartItem in cartItems %}
                     <tr>
                         {% if cartItem.image %}
-                            <td><input type="checkbox" value="static/images/{{ cartItem.image }}" name="cartItem"/></td>
+                            <td><input type="checkbox" value="static/images/thumbnail/{{ cartItem.image }}" name="cartItem"/></td>
                         {% else %}
                             <td><input type="checkbox" value="" name="cartItem"/></td>
                         {% endif %}
@@ -18,7 +18,7 @@
                         <td>{{ cartItem.price * cartItem.count }}</td>
                         <td>
                         {% if cartItem.image %}
-                          <a href="/detail/{{ cartItem.productId }}" class="thumbnail"><img src="/static/images/{{ cartItem.image }}" width="128" height="128" alt="flowerflower" title="flowerflower"></a>
+                          <a href="/detail/{{ cartItem.productId }}" class="thumbnail"><img src="/static/images/thumbnail/{{ cartItem.image }}" width="128" height="128" alt="flowerflower" title="flowerflower"></a>
                         {% else %}
                           <a href="/detail/{{ cartItem.productId }}" class="thumbnail"><img src="/static/images/no_image.jpg" width="128" height="128" alt="no_image" title="flowerflower"></a>
                         {% endif %}
@@ -27,10 +27,9 @@
                 {% endfor %}
             {% endif %}
         </table>
-        <input type="submit" value="ダウンロードする">
+        <input type="submit" value="ダウンロードする" class="btn btn-primary">
     </form>
     <p>総合計金額: {{ amount }}</p>
 </div>
-    <a class="btn btn-default" href="{{ url_for('orderInput') }}">注文情報を入力する</a>
 
 {% endblock %}

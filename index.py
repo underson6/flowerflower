@@ -284,6 +284,9 @@ def addProduct():
             shutil.move(app.config['UPLOAD_FOLDER'] + secure_filename(image_file.filename),
                         app.config['UPLOAD_FOLDER'] + "../" + randomStr + ".jpg")
 
+            # TODO サムネイルを作る
+            Util.createThumbnail(randomStr + ".jpg")
+
         product = Product()
         product.name = name
         product.price = price
