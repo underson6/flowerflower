@@ -54,3 +54,6 @@
 　mysql -u root # mysqlに接続できること
 　CREATE DATABASE flowerflower;
 　SHOW DATABASES;
+
+■サムネイルを作成するためのライブラリをインストール
+sudo python3.5 -m pip install Pillow
