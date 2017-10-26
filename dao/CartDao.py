@@ -19,7 +19,7 @@ class CartDao:
         cartItems = []
         try:
             sql = """
-                SELECT product.name as name, cart.product_id as id, cart.count as count, product.price as price, cart.count * product.price as amount, product.image as image FROM cart 
+                SELECT product.name as name, cart.product_id as id, cart.count as count, product.price as price, (cart.count * product.price) as amount, product.image as image FROM cart 
                 LEFT JOIN product 
                 ON cart.product_id = product.id 
                 WHERE session_id = %(id)s

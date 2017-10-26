@@ -1,34 +1,30 @@
 {% extends "layout.html" %}
 {% block content %}
 
-    {% if session.sessionid %}
-        <h1>session["sessionid"]とれたよ</h1>
-        {{ session.sessionid }}
-    {% else %}
-        <h1>とれてないよ</h1>
-    {% endif %}
-
 <div class="container">
-    <table class="table table-hover">
-        {% if cartItems %}
-            <tr><th>商品名</th><th>個数</th><th>合計金額</th><th></th></tr>
-            {% for cartItem in cartItems %}
-                <tr>
-                    <td>{{ cartItem.name }}</td>
-                    <td>{{ cartItem.count }}</td>
-                    <td>{{ cartItem.price }}</td>
-                    <td>
-                    {% if cartItem.image %}
-                      <a href="/detail/{{ cartItem.productId }}" class="thumbnail"><img src="/static/images/{{ cartItem.image }}" width="128" height="128" alt="flowerflower" title="flowerflower"></a>
-                    {% else %}
-                      <a href="/detail/{{ cartItem.productId }}" class="thumbnail"><img src="/static/images/no_image.jpg" width="128" height="128" alt="no_image" title="flowerflower"></a>
-                    {% endif %}
-                    </td>
-                </tr>
-            {% endfor %}
-        {% endif %}
-    </table>
-    <p>合計金額: {{ amount }}</p>
+    <form action="" method="POST">
+        <table class="table table-hover">
+            {% if cartItems %}
+                <tr><th></th><th>商品名</th><th>個数</th><th>合計金額</th><th></th></tr>
+                {% for cartItem in cartItems %}
+                    <tr>
+                        <td><input type="checkbox" value="/static/images/{{ cartItem.image }}" name="cartItem"/></td>
+                        <td>{{ cartItem.name }}</td>
+                        <td>{{ cartItem.count }}</td>
+                        <td>{{ cartItem.price * cartItem.count }}</td>
+                        <td>
+                        {% if cartItem.image %}
+                          <a href="/detail/{{ cartItem.productId }}" class="thumbnail"><img src="/static/images/{{ cartItem.image }}" width="128" height="128" alt="flowerflower" title="flowerflower"></a>
+                        {% else %}
+                          <a href="/detail/{{ cartItem.productId }}" class="thumbnail"><img src="/static/images/no_image.jpg" width="128" height="128" alt="no_image" title="flowerflower"></a>
+                        {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+        </table>
+    </form>
+    <p>総合計金額: {{ amount }}</p>
 </div>
     <a class="btn btn-default" href="{{ url_for('orderInput') }}">注文情報を入力する</a>
 

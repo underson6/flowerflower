@@ -3,6 +3,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from commons import randomMessage
 from commons import validationUtil
+from commons.util import *
 from models.Product import Product
 from models.Customer import Customer
 
@@ -244,9 +245,7 @@ def addProduct():
     productDao = ProductDao()
 
     if request.method == "POST":
-        m = hashlib.sha256()
-        m.update(os.urandom(64))
-        randomStr = m.hexdigest()
+        randomStr = Util.getRandomStr()
 
         if validationUtil.isEmpty(request.form["name"]) == True:
             name = randomStr
