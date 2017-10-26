@@ -306,18 +306,18 @@ def download():
 
     _DOWNLOAD_DIRECTORY = "static/download/"
 
-    cartItems = request.args.getlist("cartItem")
-    print("##################################")
-    print(cartItems)
-    print(socket.gethostbyname_ex(socket.gethostname()))
+    cartItems = request.form.getlist("cartItem")
 
     zipFileName = Util.getRandomStr() + ".zip"
-    zipFile = zipfile.ZipFile(_DOWNLOAD_DIRECTORY + zipFileName, "w", zipfile.ZIP_STORED)
+    zipFile = zipfile.ZipFile(zipFileName, "w", zipfile.ZIP_STORED)
 
     for cartItem in cartItems:
-        zipFile.write(cartItem)
+        if validationUtil.isEmpty(cartItem) is False:
+            zipFile.write(cartItem)
 
     zipFile.close()
+
+    os.rename(zipFileName, _DOWNLOAD_DIRECTORY + zipFileName)
 
     return render_template("download.html", title=title, zipfile=_DOWNLOAD_DIRECTORY + zipFileName)
 

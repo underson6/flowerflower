@@ -8,7 +8,11 @@
                 <tr><th></th><th>商品名</th><th>個数</th><th>合計金額</th><th></th></tr>
                 {% for cartItem in cartItems %}
                     <tr>
-                        <td><input type="checkbox" value="/static/images/{{ cartItem.image }}" name="cartItem"/></td>
+                        {% if cartItem.image %}
+                            <td><input type="checkbox" value="static/images/{{ cartItem.image }}" name="cartItem"/></td>
+                        {% else %}
+                            <td><input type="checkbox" value="" name="cartItem"/></td>
+                        {% endif %}
                         <td>{{ cartItem.name }}</td>
                         <td>{{ cartItem.count }}</td>
                         <td>{{ cartItem.price * cartItem.count }}</td>
