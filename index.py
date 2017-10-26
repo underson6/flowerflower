@@ -329,12 +329,6 @@ def download():
     return render_template("download.html", title=title, zipfile=_DOWNLOAD_DIRECTORY + zipFileName)
 
 
-@app.route("/about")
-def about():
-    """このサイトについてを表示"""
-    title = u"このサイトについて"
-    return render_template("about.html", title=title)
-
 @app.errorhandler(404)
 def not_found(error):
     """404ページ"""
