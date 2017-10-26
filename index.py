@@ -3,7 +3,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from commons import randomMessage
 from commons import validationUtil
-from commons.util import *
+from commons.Util import *
 from models.Product import Product
 from models.Customer import Customer
 
