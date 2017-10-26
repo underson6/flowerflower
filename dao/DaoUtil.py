@@ -7,6 +7,9 @@ import os
 import MySQLdb
 
 class DaoUtil:
+    u"""DBへの接続を管理するクラス
+    設定ファイルはdao/conf/dbconf.iniを参照する"""
+
     _instance = None
     _connection = None
     _lock = threading.Lock()
@@ -23,6 +26,8 @@ class DaoUtil:
         return cls._instance
 
     def getConnection(self):
+        u"""コネクションがすでに確立されていれば、そのコネクションを返す。
+        コネクションが未確立なら、コネクションを確立してそのコネクションを返す。"""
         if self._connection is None:
             inifile = configparser.ConfigParser()
             inifile.read(os.path.dirname(__file__) + "/conf/dbconf.ini")
@@ -36,6 +41,8 @@ class DaoUtil:
         return self._connection
 
     def __del__(self):
+        u"""デストラクタ"""
+
         if self._connection is not None:
             try:
                 self._connection.close()

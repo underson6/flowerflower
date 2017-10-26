@@ -4,8 +4,8 @@ class Product:
 
     def __init__(self):
         self.id = 0
-        self.name = u"おはな"
-        self.price = 200
-        self.detail = u"これはおはなです"
+        self.name = ""
+        self.price = 0
+        self.detail = ""
         self.tag = ""
         self.image = "/static/images/no_images.jpg"

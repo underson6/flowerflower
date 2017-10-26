@@ -8,12 +8,13 @@ from dao.DaoUtil import DaoUtil
 from models.Customer import Customer
 
 class CustomerDao:
-    u""" ordersテーブルのDAOクラス """
+    u""" CustomerテーブルのDAOクラス """
 
     def __init__(self):
         super().__init__()
 
     def getAllCustomer(self):
+        u"""全ての顧客情報を取得する"""
         con = None
         cursor = None
         customers = []
@@ -50,6 +51,7 @@ class CustomerDao:
         return customers
 
     def addCustomer(self, customer):
+        u"""顧客情報を追加する"""
         sql = "INSERT INTO customer VALUES (null, %s, %s, %s, %s)"
         con = None
         cursor = None
