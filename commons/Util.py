@@ -21,5 +21,5 @@ class Util():
 
         _IMAGE_FILE_PATH = 'static/images/'
         img = Image.open(_IMAGE_FILE_PATH + originalFilePath)
-        img.thumbnail(128, 128)
+        img.thumbnail((128, 128))
         img.save(_IMAGE_FILE_PATH + 'thumbnail/' + originalFilePath)
