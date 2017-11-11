@@ -91,14 +91,21 @@ def recommend():
     return render_template('recommend.html', title=title, products=products)
 
 
-@app.route("/search/tag/<string:tag>", methods=["GET", "POST"])
-def searchTag(tag):
+@app.route("/search/tag", methods=["GET", "POST"])
+def searchTag():
     """タグで検索"""
-    title = u"タグ検索:" + tag
 
-    # 指定されたタグ(キーワード)で検索する
-    productDao = ProductDao()
-    products = productDao.getProductByTag(tag)
+    tag = ""
+    products = None
+
+    if not validationUtil.isEmpty(request.form["search-text"]):
+        tag = request.form["search-text"]
+
+        # 指定されたタグ(キーワード)で検索する
+        productDao = ProductDao()
+        products = productDao.getProductByTag(tag)
+
+    title = u"タグ検索:" + tag
 
     return render_template('all_products.html', title=title, products=products)
 
