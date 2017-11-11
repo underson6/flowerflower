@@ -66,16 +66,14 @@ class TestProductDao():
         assert products[0].name == "gaba"
         assert products[0].detail == "gabagaba"
         assert products[0].price == 2000
-        assert products[0].recommend == True
-        assert products[1].tag == ""
-        assert products[1].image == "rose.jpg"
+        assert products[0].tag == ""
+        assert products[0].image == "rose.jpg"
 
         assert products[1].name == "gaba"
         assert products[1].detail == "gabagaba"
         assert products[1].price == 2000
-        assert products[1].recommend == True
-        assert products[0].tag == "ccc"
-        assert products[0].image == None
+        assert products[1].tag == "ccc"
+        assert products[1].image == None
 
 
     def test_addProduct_succes(self):

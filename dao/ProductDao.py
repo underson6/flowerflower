@@ -101,7 +101,7 @@ class ProductDao:
         cursor = None
         products = []
         try:
-            sql = "SELECT * FROM product WHERE recommend = 1 ORDER BY regist_date DESC"
+            sql = "SELECT * FROM product WHERE recommend = 1 ORDER BY id DESC"
             daoUtil = DaoUtil()
             con = daoUtil.getConnection()
             cursor = con.cursor(MySQLdb.cursors.DictCursor)
